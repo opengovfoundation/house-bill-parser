@@ -47,7 +47,7 @@
 			}
 		
 			if($this->id == 0){
-				printError("Id came back $this->id for bill ($this->bill)");
+				printMessage("Warning: Id came back $this->id for bill ($this->bill)");
 			}
 			
 			//This is not a reliable value
