@@ -8,5 +8,5 @@ A php parsing script for the US House of Representatives' bulk bill data.  This 
 2.  Edit config.php to set database credentials
 3.  `php parse <file_location>` to parse the files into the Madison database
 
-##Status:
-This script is still in progress and currently only saves the bill meta information to the Madison bills table.  No content is currently imported.
+##Planned Improvements:
+- Include quotes at the beginning of 'quoted-blocks'
