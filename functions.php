@@ -31,7 +31,16 @@
 		echo "$msg\n";
 		echo "-----------------------------------\n";
 	}
-
+	
+	/**
+	 *	 Get input from the command line
+	 */
+	function getInput($msg){
+		echo "$msg ...\n";
+		$ret = fgets(STDIN);
+		return $ret;
+	}
+	
 	/**
 	 * 	Get Bill values where only one tag exists
 	 */	

@@ -22,7 +22,6 @@
 	 */
 	$doc = new DOMDocument();
 	$pdo = null;
-	$structure = array('section', 'subsection', 'paragraph', 'clause', 'subclause');
 	
 	/**
 	 * 	Execution
@@ -49,23 +48,16 @@
 		$id = $bill->save();
 		
 		//Set bill content root element
-		//$root = $doc->getElementsByTagName(ROOT_TAG)->item(0);
-		//$bill->setRoot($root);
+		$root = $doc->getElementsByTagName(ROOT_TAG)->item(0);
+		$bill->setRoot($root);
+		
+		//Set root element content
+		$bill->setFirstContent(getBillMeta($doc, 'legis-type') . " " . getBillMeta($doc, 'official-title'));
+		
+		//Save all bill content items to Madison db
+		$bill->saveContent();
 		
 	}catch (Exception $err){
 		printError($err->getMessage());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
